@@ -1,0 +1,43 @@
+compilatores--> tradução de uma liguagem de entrada em uma outra liguagem(codigo maquina) não executa nada.
+Intrepetador---> Recebe um codigo em uma liguagem e executa o codigo, mas não criar nenhum ficheiro. 
+
+OBS: No trabalho pratico vamos fazer os dois.
+Antlr4--> como usar para fazer o compInter?
+O compilador vai gerar uma classe na linguagem de trabalho(lexer.java-->é alimentada por caracteres a entrada e geram tokens) e também vai gerar um parser.java--> é alimentado por tokens.
+Para transformar isso em programa tenhode criar uma main para instanciar as classes criada. É soficiente?
+Não--> O Antlr fornece o Lister e Visitor--> Podemos usar mais de um dele. 
+
+_______       ______
+|      |     |      |--->Lexer.java
+|mdl.g4|---->|ANTLR |--->Parser.java
+|      |     |      |--->Listern*
+|______|     |______|--->Visitor*
+
+_______       _________       ____
+|      |     |         |     |    |
+|x.mdl |---->|compiler |---->|x.? |
+|      |     |         |     |    |
+|______|     |_________|     |____|
+
+
+_______     ____________
+|     |     |          |
+|x.mdl|---->|interpret |
+|     |     |          |
+|_____|     |__________|
+
+
+ ______         _______          _______       
+|      |char   |       |token   |       | parser
+|x.mdl |------>|lexer  |------->|Parser |------------------------------------>
+|      |Stream |       |Stream  |       |tree    |             |
+|______|       |_______|        |_______|        |             |
+                  |                             _|________    _|______
+		  |--> skip		       |myvisitor |  |        |
+                                               |          |  |....    |    ____
+                                               |__________|  |________|<---|   |
+                                                                 |         |___|
+                                                                _|___
+                                                               |     |
+                                                               |_____|
+                                                                
