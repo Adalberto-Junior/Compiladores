@@ -1,0 +1,35 @@
+Caros alunos,
+este ano, devido a um problema de configuração ao nível dos STIC, tivemos alguma turbulência  no início da utilização do GitHub.
+Para os que ainda não têm o problema resolvido, envio em baixo um resumo dos passo que devem seguir.
+Aproveito para referir que, desde o início das aulas, foram introduzidas pequenas alterações e melhorias. Ver em baixo como obter as actualização.
+Saudações académicas,
+Luís Seabra Lopes
+ 
+==============================
+ 
+Garantir que email primário na vossa conta no GitHub é o email da UA (utilizador universal)
+ 
+Se ainda não forem membros da organização "detiuaveiro"no GitHub, peçam ao vosso docente da prática para vos enviar um convite, que depois terão que aceitar.
+Generar chave SSH pública com comando ssh-keygen e colocar essa chave nos settings do utilizador no github
+
+Autorizar a chave no botão "configure SSO" que aparece junto à chave
+
+Entrar no guião via elearning
+
+Seleccionar o nome do aluno na lista para criar o repositório
+
+Criar cópia local do vosso repositório com o seguinte comando:
+
+git clone git@github.com:detiuaveiro/guiao-de-programacao-funcional-YOURUSERID.git
+
+Definir repositório upstream para obter actualizações ao guião e código anexo:
+
+cd guiao-de-programacao-funcional-YOURUSERID
+git remote add upstream git@github.com:detiuaveiro/iia-ia-guiao-python.git
+
+Quando existirem actualizações, devem fazer o seguinte:
+
+git fetch upstream
+git checkout master
+git merge --allow-unrelated-histories upstream/master
+

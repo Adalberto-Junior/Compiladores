@@ -1,0 +1,15 @@
+.bin/soma22/ -b all exaples/p1.txt -g pct
+
+3 alterações-- nome da função e o main-
+
+xx_modules.h --> estrutura de dados--> se for int/... devemos referencia-los--> extern int i;: por exemplo.
+declaração de variavel--> deve>--> ser--> xx.cp-->xx-->nome do modulo----> e devo declara-la sem o extern.
+
+1.--> Estruturade dados:
+dicionario;--Struct-->para guardar os dados;-->include <map>---> extern std::map<uinit32_t,PCBLOCK> pctable;-->copiar para xx.cp PCBLOCK-->struct
+lista ligada
+2---> destribuir as funções em grupo;--
+pcinit--> ler ficheiro file
+
+
+

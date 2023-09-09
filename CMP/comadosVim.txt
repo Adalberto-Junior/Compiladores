@@ -1,0 +1,206 @@
+
+Usando o Vim
+Atalhos e comandos para utilizar o Vim como IDE e editor de textos
+
+Tela do Vim
+Para treinar teclas e atalhos no Vim:
+
+https://vim-adventures.com/
+
+Para entrar na linha de comando, aperte ESC.
+
+Para sair:
+
+:q
+Se movimentando no Vim pelo teclado:
+
+H ←
+J ↓
+K ↑
+L →
+
+Ajuda:
+
+:help
+Abrir um arquivo no Vim:
+
+vim nome-arquivo.txt
+Abrir um arquivo dentro do Vim:
+
+:e nome-arquivo.txt
+Colocar números nas linhas:
+
+:set number
+Ir para início do arquivo:
+
+gg
+Ir para o fim do arquivo:
+
+G
+Ir para linha 7:
+
+7G
+ou
+
+:7
+Inserir sublinhado na linha que você estiver:
+
+:set cursorline
+Paginação para baixo: CTRL + D
+
+Paginação para cima: CTRL + U
+
+Começo da linha: 0 ou ^
+
+Fim da linha: $
+
+Fim da próxima palavra: e
+
+Começo da próxima palavra: w
+
+Começo da palavra anterior: b
+
+Próximo parágrafo: }
+
+Parágrafo anterior: {
+
+Próxima frase: )
+
+Frase anterior: (
+
+Porcentagem do texto: 10%
+
+Sair sem salvar: q! — Obs: o ! significa negação
+
+Definir highlight do tipo de arquivo:
+
+:set filetype=html
+Navegar entre pares: % (útil para códigos de marcação. Ex. HTML)
+
+Modos:
+Command mode ( : )
+Insert mode: ( i I a A o O )
+Visual mode: ( V v )
+Inserção:
+i — insere no início do cursor
+I — insere no começo da linha
+O — insere uma linha acima
+o — insere uma linha abaixo
+
+u — desfazer alterações
+CTRL+r — refazer alterações
+
+A — inserir no fim da linha
+a — inserir um caractere após o cursor
+
+s — deleta o caractere do cursor
+S — deleta a linha inteira
+
+C — deleta do cursor para a direita
+
+gi — volta para a posição anterior do cursor com insert
+
+Visual:
+v — seleciona caractere por caractere
+V — seleciona linhas
+CTRL+V — seleciona blocos
+
+Copiar:
+
+y
+Colar:
+
+p
+Alterar texto por expressão regular:
+
+gg // vai pro começo do arquivo
+Shift + v // selecione por linhas até o fim do arquivo
+:'<,'>s/titulo3/texto4/g // substitui titulo3 por texto4
+Trabalhar com mais de um arquivo ao mesmo tempo (vertical split):
+
+:vsp
+Mudar de aba:
+
+CTRL + w + l
+Split de aba horizontal:
+
+:sp
+Excluir caractere: x
+
+Salvar:
+
+:w
+Salva e sai do Vim:
+
+:wa
+:x
+Salva a cada alteração:
+
+:set autowriteall
+Sair de todas as abas:
+
+:qa
+Navegar entre abas:
+
+CTRL + w + w
+Copiar o conteúdo de um arquivo para dentro de um arquivo em branco no Vim:
+
+:r! cat /etc/hosts
+:r! hostname -i
+Executar comandos externos. Abrir um arquivo no Chrome:
+
+:! google-chrome index.html
+Ver todos os registros que você fez:
+
+:registers
+Procurar texto no documento:
+
+/meuTexto
+Alterar textos com expressões regulares (troca green por yellow):
+
+:%s/green/yellow/g
+Conversando com o Vim:
+dw — apaga a palavra
+da} — apague a chave e seu conteúdo
+3dw — apaga três palavras
+dt: — apaga até os :
+di) — apague o conteúdo dos parentes
+ci{ — apague dentro das chaves
+cit — apague dentro da tag
+cat — apague tudo dentro da tag
+
+Helpers
+fi — acha a próxima letra i
+Fi — acha a letra i anterior
+
+CTRL+a — incrementa um número
+CTRL+x — decrementa um número
+
+J — mescla linhas
+
+Salvar como:
+
+:w novo-arquivo.txt
+Macros
+Gravando uma macro:
+
+q<letra> // a letra identifica a macro
+Faça a sua macro com insert, delete, etc…
+
+Finalizando a macro:
+
+q
+Executando a macro:
+
+
+
+:%s/<search_term><replace_term>/g
+Este comando substituirá todas as instâncias de pesquisa_term pelo substituto_term.
+
+Por exemplo, este é o nosso texto de amostra:
+
+Para substituir cada ocorrência de “Ubuntu” por “Debian” no texto seguinte, seria utilizado o seguinte comando:
+
+:%s/Ubuntu/Debian/g
+
+
